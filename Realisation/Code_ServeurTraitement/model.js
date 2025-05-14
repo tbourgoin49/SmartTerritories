@@ -1,3 +1,5 @@
+const mongoose = require("mongoose");
+
 //La classe CModel créera un modèle de la base donnée dans la classe CDatabase, avec un modèle type pris en compte par défaut et un autre qui peut être donné par l'utilisateur
 class CModel {
     constructor(modelName = 'dbModel', collectionName = 'Test_Database', schemaCustom = null) {
