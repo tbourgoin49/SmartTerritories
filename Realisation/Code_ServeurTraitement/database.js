@@ -42,3 +42,6 @@ class CDatabase {
 	}
     }
 }
+
+
+module.exports = { CDatabase };
