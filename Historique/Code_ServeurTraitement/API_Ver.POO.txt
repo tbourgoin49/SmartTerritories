@@ -1,0 +1,30 @@
+Cette version de l'API sera créée en Programmation Orientée Objet ce qui veut aussi dire avec des classes. 
+On divisera le projet originel en plusieurs classes et donc fichiers : 
+
+	- entry.js -> Ce fichier sera le point d'entrée de l'API, contenant l'initialisation de l'app avec express et toutes les lignes de code qui lui sont rattachées. 
+
+
+	- database.js -> Ce fichier contiendra la connexion à la base de donnée ainsi que le modèle mongoose.
+
+
+	- requetes.js -> Ce fichier contiendra toutes les requêtes formées par l'API, donc les différentes routes.
+
+Elle sera créée sur les mêmes bases que l'API liée à notre base "Test_Database" l'url du serveur sera aussi localhost et les points d'entrées (routes) seront : "/api" et "/api/all" pour retrouver les conformités de l'ancienne version sans POO. 
+
+
+Après avoir initialisé le projet node js puis mis "entry.js" comme point d'entrée, on peut modifier celui-ci et si besoin créer une API Hello World : 
+	const express = require('express')
+	const app = express()
+	app.get('/', (req, res) => {
+  		res.send('Hello World!')
+	})
+
+	app.listen(8080, () => { console.log("Serveur à l\'écoute") })
+
+
+L'API est ici en localhost sur le port de connexion à une application web locale (du moins celui qui est majoritairement utilisé pour ca)
+
+
+(voir les différentes versions du code)
+
+
