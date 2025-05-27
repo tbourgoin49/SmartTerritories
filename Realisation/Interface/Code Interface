@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Tableau et Graphique API</title>
+  <title>Smart Territories</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body { font-family: sans-serif; padding: 20px; }
@@ -19,7 +19,11 @@
   <label for="lieuSelect">Choisir un lieu :</label>
   <select id="lieuSelect">
     <option value="Roseraie">Roseraie</option>
-    <option value="SaintAubin">SaintAubin</option>
+    <option value="Haut-Saint-Aubin">Haut-Saint-Aubin</option>
+    <option value="Belle-Beille">Belle-Beille</option>
+    <option value="Monplaisir">Monplaisir</option>
+    <option value="Centre-Ville">Centre-Ville</option>
+    <option value="Saint-Serge">Saint-Serge</option>
   </select>
 
 
@@ -73,7 +77,7 @@
     }
 
     function updateChart(data) {
-      const labels = ['Donnée 1', 'Donnée 2', 'Donnée 3', 'Donnée 4', 'Donnée 5', 'Donnée 6', 'Donnée 7', 'Donnée 8'];
+      const labels = ['Température', 'Humidité', 'Pression Atmosphérique', 'SO2', 'SO2', 'NO2', 'O3', 'PM10'];
       const values = data.donnees;
 
       if (chart) {
