@@ -77,7 +77,8 @@
     }
 
     function updateChart(data) {
-      const labels = ['Température', 'Humidité', 'Pression Atmosphérique', 'SO2', 'SO2', 'NO2', 'O3', 'PM10'];
+      const labels = ['Température', 'Humidité', 'Pression Atmosphérique', 'SO2', 'NO2', 'O3', 'PM2.5', 
+      'PM10'];
       const values = data.donnees;
 
       if (chart) {
