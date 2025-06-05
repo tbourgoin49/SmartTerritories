@@ -27,7 +27,7 @@ class CAnalyse {
 	const regexDate = new RegExp("^\\d{4}-\\d{2}-\\d{2} ((0\\d)|(1\\d)|(2[0-3]))$");
         if (!regexDate.test(dataMQTT.Date)) {
             //console.error("Format de date invalide. Format attendu : 'AAAA-MM-JJ HH'");
-	    logger.warn("Format de date invalide reçu dans le paquet MQTT. Format attendu : 'AAAA/MM/JJ HH'");
+	    logger.warn("Format de date invalide reçu dans le paquet MQTT. Format attendu : 'AAAA-MM-JJ HH'");
             return false;
         }
 
@@ -52,6 +52,8 @@ class CAnalyse {
                 //console.error("Erreur lors de l’envoi à l’API :", error.message);
 		logger.warn(`Erreur lors de l’envoi du paquet MQTT à l’API : ${error.message
             }
+	} else {
+            logger.warn("Paquet MQTT rejeté après validation.\n");
 	}
     }
 }
