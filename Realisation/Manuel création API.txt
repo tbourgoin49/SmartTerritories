@@ -1,0 +1,116 @@
+INSTALLATION MONGO DB : 
+
+https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+Installation de MongoDB : 
+
+Installer gnupg et curl : 
+	sudo apt-get install gnupg curl
+
+Récupérer la clé GPG de MongoDB
+	curl -fsSL https://www.mongodb.org/static/pgp/server-4.4.asc | \
+   sudo gpg -o /usr/share/keyrings/mongodb-server-4.4.gpg \
+   --dearmor
+
+Créer la liste de fichiers
+	echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-4.4.gpg ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+
+Recharger les paquets de la base de données
+	sudo apt-get update
+
+Télécharger MongoDB pour de vrai
+	sudo apt-get install -y mongodb-org=4.4.29 mongodb-org-server=4.4.29 mongodb-org-shell=4.4.29 mongodb-org-mongos=4.4.29 mongodb-org-tools=4.4.29
+
+
+Démarrer le service de base de donnée
+	sudo systemctl start mongod
+
+Vérifier le status du service
+	sudo systemctl status mongod
+
+
+
+CREER UNE BASE DE DONNÉES MONGODB EN CLI : 
+
+Acceder au shell MongoDB
+	$mongo
+
+Création de la BDD : 
+	use "nom_BDD"
+
+Vérification de la BDD en utilisation
+	db
+
+
+Inserer une entité dans la BDD (en script)
+	db."nom_bdd".insert( { "Nom_Champ1" : "Donnée1", "Nom_Champ2" : "Donnée2", [...], "Nom_ChampN" : "DonnéeN" } )
+
+Possible en une seule ligne ou ligne par ligne
+
+
+Verifier les données dans la BDD
+	db."nom_BDD".find().forEach(printjson)
+
+
+Sur un OS linux : 
+Installer NPM
+	sudo apt install nodejs npm -y
+
+Verifier la version si besoin 
+	nodejs --version		(ici 10.19.0)
+ET
+	npm --version			(ici 6.14.4)
+
+
+Installer l'outil de dev NPM : 
+	sudo apt install build-essential -y
+
+
+
+Ajouter un répertoire pour l'API
+	mkdir "..."
+
+Créer un fichier index.js
+	nano index.js
+Ecrire dans le fichier si besoin (pour ne pas le perdre)
+
+Démarrer le projet Node JS
+	npm init
+(répondre aux différentes questions comme le nom du projet et l'auteur, etc)
+
+Un paquet JSON sera ajouté dans le répertoire créé précédemment (package.json)
+	nano package.json
+Si besoin de vérifier le paquet et les informations renseignées
+
+
+
+METTRE A JOUR NODEJS POUR UTILISER MONGOOSE
+	curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
+
+	nvm install 18
+
+
+Ajouter express à l'API
+	npm install express
+Installe la librairie express et les autres nécessaires. Ainsi que la registry NPM
+
+
+
+Lier MongoDB à l'API
+	npm install mongoose
+
+
+
+
+Ajout de mqtt et axios (connexion pour ERs) pour la préparation du client MQTT
+	npm install axios mqtt
+
+
+Ajout de la doc Swagger pour les utilisateurs
+	npm install swagger-jsdoc swagger-ui-express
+
+
+
+
+Installation des logs dans le code : 
+
+	npm install Winston
